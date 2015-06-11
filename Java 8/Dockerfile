@@ -1,9 +1,14 @@
-#
-# Oracle Java 8 Dockerfile
-#
+##########################################
+# 		Oracle Java 8 Dockerfile
+##########################################
 
-# Pull base image.
+# base image.
 FROM rajsaxena/ubuntu_14.04_with_basic_utils
+
+# File Author / Maintainer
+MAINTAINER Raj <rajs@mangospring.com>
+
+LABEL Description="This image installs Java8 on ubuntu-with-utils image"
 
 # Install Java.
 RUN \

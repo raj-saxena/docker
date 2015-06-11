@@ -2,6 +2,7 @@
 # Dockerfile to build minimal container image
 # Based on Ubuntu
 ############################################################
+
 # Set the base image to Ubuntu
 FROM ubuntu:14.04
 
