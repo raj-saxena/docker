@@ -892,7 +892,7 @@
        <str name="rows">1000</str>
 
        <str name="qf">
-		filename^5.0 text^1.0
+		filename^5.0 tags^2.0 text^1.0
 	   </str>
        <str name="pf">text</str>
        <str name="ps">100</str>

@@ -11,7 +11,13 @@ MAINTAINER Raj <rajs@mangospring.com>
 LABEL Description="A layer of Solr server on top of Java container"
 
 COPY solr_5.2.0 /solr_5.2
-# ENTRYPOINT ["/solr_5.2/bin/solr"]
+
+# ENTRYPOINT ["/solr_5.2/bin/solr"] # Will have to add more options to solr script to execute command if passed in startup - https://goo.gl/iqGdBw
+
+# Default home directory
+WORKDIR /solr_5.2
+
+CMD ["/solr_5.2/bin/solr"]
 
 #Exposing Solr port 
 EXPOSE 8989
