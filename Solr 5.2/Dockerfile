@@ -10,14 +10,20 @@ MAINTAINER Raj <rajs@mangospring.com>
 
 LABEL Description="A layer of Solr server on top of Java container"
 
-COPY solr_5.2.0 /solr_5.2
-
-# ENTRYPOINT ["/solr_5.2/bin/solr"] # Will have to add more options to solr script to execute command if passed in startup - https://goo.gl/iqGdBw
+COPY solr_5.2.0 /solr
+COPY entrypoint.sh /
 
 # Default home directory
-WORKDIR /solr_5.2
+WORKDIR /solr
 
-CMD ["/solr_5.2/bin/solr"]
+# Will have to add more options to solr script to execute command if passed in startup - https://goo.gl/iqGdBw
+ENTRYPOINT ["/entrypoint.sh"] 
+
+#CMD ["/solr/bin/solr"]
+
+# Supervisord can be used later to ensure app in background.
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+# CMD ["/usr/bin/supervisord"] 
 
 #Exposing Solr port 
 EXPOSE 8989
