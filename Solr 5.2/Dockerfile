@@ -3,7 +3,8 @@
 ##########################################
 
 # base image.
-FROM rajsaxena/java8
+# FROM rajsaxena/java8
+FROM rajsaxena/supervisor
 
 # File Author / Maintainer
 MAINTAINER Raj <rajs@mangospring.com>
